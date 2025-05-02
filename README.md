@@ -165,3 +165,41 @@ This section describes the main features of the AirBnB Clone project:
   - **Description:** This feature allows users to securely process payments for bookings. It handles the financial transactions between guests and hosts, ensuring a smooth and reliable booking experience.
 - **Search Functionality:**
   - **Description**: Enables users to search for properties based on various criteria such as location, date, price range, and keywords. This feature allows users to quickly and efficiently find the properties they are interested in.
+
+## API Security
+
+This section outlines the key security measures that will be implemented to protect the AirBnB Clone project's backend APIs and data. Security is crucial for maintaining user trust, protecting sensitive information, and ensuring the integrity of the platform.
+
+- **Authentication:**
+
+  - **Description:** Verifying the identity of a user before granting access to protected resources. This typically involves using usernames and passwords, or other credentials.
+  - **Importance:** Essential for protecting user data (e.g., personal information, booking history) and ensuring that only authorized users can access their accounts and perform actions. Prevents unauthorized access and malicious activities.
+
+- **Authorization:**
+
+  - **Description:** Determining what actions a user is allowed to perform after they have been authenticated. This involves defining roles and permissions.
+  - **Importance:** Ensures that users can only access the resources and perform the actions that are appropriate to their role. For example, a regular user should not be able to modify another user's property listing. Protects against privilege escalation and unauthorized data modification.
+
+- **Rate Limiting:**
+
+  - **Description:** Restricting the number of requests that a user or client can make to an API within a given time period.
+  - **Importance:** Protects the API from denial-of-service (DoS) attacks, brute-force attacks (e.g., password guessing), and abuse. Ensures that the API remains available and responsive for all users.
+
+- **Data Validation and Sanitization:**
+
+  - **Description:** Verifying that incoming data conforms to the expected format and type, and cleaning it to remove any potentially harmful characters or code.
+  - **Importance:** Prevents injection attacks (e.g., SQL injection, Cross-Site Scripting - XSS), where malicious code is inserted into the application through user input. Ensures data integrity and prevents data corruption.
+
+- **Secure Password Handling:**
+
+  - **Description:** Storing passwords securely using hashing algorithms (e.g., bcrypt, Argon2) and salting.
+  - **Importance:** Protects user passwords from being compromised in the event of a data breach. Hashing makes it extremely difficult to recover the original password from the stored hash.
+
+- **HTTPS:**
+
+  - **Description:** Using encryption (TLS/SSL) to secure communication between the client and the server.
+  - **Importance:** Protects data transmitted over the internet, such as login credentials, personal information, and payment details, from being intercepted by attackers. Ensures confidentiality and data integrity.
+
+- **Cross-Origin Resource Sharing (CORS):**
+  - **Description:** Configuring the server to control which domains are allowed to make requests to the API.
+  - **Importance:** Prevents unauthorized access to the API from malicious websites. Ensures that the API is only accessed by trusted clients.
