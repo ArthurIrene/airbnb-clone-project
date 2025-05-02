@@ -201,5 +201,33 @@ This section outlines the key security measures that will be implemented to prot
   - **Importance:** Protects data transmitted over the internet, such as login credentials, personal information, and payment details, from being intercepted by attackers. Ensures confidentiality and data integrity.
 
 - **Cross-Origin Resource Sharing (CORS):**
+
   - **Description:** Configuring the server to control which domains are allowed to make requests to the API.
   - **Importance:** Prevents unauthorized access to the API from malicious websites. Ensures that the API is only accessed by trusted clients.
+
+  ## CI/CD Pipeline
+
+This section describes the Continuous Integration/Continuous Deployment (CI/CD) pipeline that will be used in this project.
+
+**What is CI/CD?**
+
+CI/CD is a set of practices that automate the process of building, testing, and deploying software. **Continuous Integration (CI)** involves automatically building and testing code changes whenever they are committed to the repository. **Continuous Deployment (CD)** extends CI by automatically deploying the tested code changes to a staging or production environment.
+
+**Why is CI/CD Important?**
+
+CI/CD offers several benefits:
+
+- **Faster Development Cycles:** Automates repetitive tasks, allowing developers to focus on writing code.
+- **Increased Code Quality:** Automated testing helps to catch bugs early, reducing the risk of introducing errors into production.
+- **Faster Time to Market:** Automates the deployment process, enabling quicker releases of new features and bug fixes.
+- **Improved Collaboration:** Provides a standardized process for code integration and deployment, facilitating collaboration among team members.
+- **Reduced Risk:** Automated testing and deployment reduce the risk of manual errors and deployment issues.
+
+**Tools**
+
+The following tools can be used to implement a CI/CD pipeline for this project:
+
+- **GitHub Actions:** A platform for automating software workflows directly within your GitHub repository. It can be used for CI/CD, and other automation tasks.
+- **Docker:** A platform for building, shipping, and running applications in containers. Docker can be used to create consistent and reproducible environments for development, testing, and deployment.
+- **Jenkins:** An open-source automation server that can be used to automate various tasks in the software development process, including CI/CD.
+- **Other Tools**: Other tools can be used, such as GitLab CI/CD, CircleCI, and Travis CI.
