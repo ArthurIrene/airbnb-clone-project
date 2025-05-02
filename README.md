@@ -82,3 +82,69 @@ Here's a breakdown of the technologies used in this project:
   - _Example 1: Docker_: A platform for containerizing applications, enabling consistent deployment across different environments.
   - _Example 2: Git_: A distributed version control system for tracking changes in source code during software development.
   - _Example 3: GraphQL_: A query language for your API, and a server-side runtime for executing queries by using a type system you define for your data.
+
+## Database Design
+
+This section describes the database schema for the AirBnB Clone project. The following entities are used:
+
+- **Users**
+
+  - **Fields:**
+    - `user_id` (Primary Key): Unique identifier for the user.
+    - `email`: User's email address (must be unique).
+    - `password`: User's password (hashed for security).
+    - `first_name`: User's first name.
+    - `last_name`: User's last name.
+  - **Relationships:**
+    - One-to-many relationship with Properties (a user can list multiple properties).
+    - One-to-many relationship with Bookings (a user can make multiple bookings).
+    - One-to-many relationship with Reviews (a user can write multiple reviews).
+
+- **Properties**
+
+  - **Fields:**
+    - `property_id` (Primary Key): Unique identifier for the property.
+    - `user_id` (Foreign Key): The ID of the user who owns this property.
+    - `title`: Title of the property listing.
+    - `description`: Description of the property.
+    - `location`: Location of the property (e.g., address, city).
+    - `price_per_night`: Price per night for the property.
+  - **Relationships:**
+    - Many-to-one relationship with Users (many properties can belong to one user).
+    - One-to-many relationship with Bookings (one property can have multiple bookings).
+    - One-to-many relationship with Reviews (one property can have multiple reviews).
+
+- **Bookings**
+
+  - **Fields:**
+    - `booking_id` (Primary Key): Unique identifier for the booking.
+    - `user_id` (Foreign Key): The ID of the user who made the booking.
+    - `property_id` (Foreign Key): The ID of the property that was booked.
+    - `start_date`: Start date of the booking.
+    - `end_date`: End date of the booking.
+    - `total_price`: Total price of the booking.
+  - **Relationships:**
+    - Many-to-one relationship with Users (many bookings can be made by one user).
+    - Many-to-one relationship with Properties (many bookings can belong to one property).
+
+- **Reviews**
+
+  - **Fields:**
+    - `review_id` (Primary Key): Unique identifier for the review.
+    - `user_id` (Foreign Key): The ID of the user who wrote the review.
+    - `property_id` (Foreign Key): The ID of the property being reviewed.
+    - `rating`: Rating given by the user (e.g., 1 to 5).
+    - `comment`: Text of the review.
+  - **Relationships:**
+    - Many-to-one relationship with Users (many reviews can be written by one user).
+    - Many-to-one relationship with Properties (many reviews can belong to one property).
+
+- **Payments**
+  - **Fields:**
+    - `payment_id` (Primary Key): Unique payment identifier.
+    - `booking_id` (Foreign Key): The booking this payment is for.
+    - `payment_date`: Date of the payment.
+    - `amount`: Amount paid.
+    - `payment_method`: Method used for payment (e.g., credit card, PayPal).
+  - **Relationships:**
+    - One-to-one relationship with Bookings (one payment is made for one booking)
