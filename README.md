@@ -148,3 +148,20 @@ This section describes the database schema for the AirBnB Clone project. The fol
     - `payment_method`: Method used for payment (e.g., credit card, PayPal).
   - **Relationships:**
     - One-to-one relationship with Bookings (one payment is made for one booking)
+
+## Feature Breakdown
+
+This section describes the main features of the AirBnB Clone project:
+
+- **User Management:**
+  - **Description:** This feature allows users to create accounts, manage their profiles, authenticate, and handle password resets. It provides the foundation for user interaction with the platform, ensuring secure access and personalized experiences.
+- **Property Management:**
+  - **Description:** This feature enables users to list, view, and manage property details, including descriptions, locations, pricing, and availability. It's core to the platform's functionality, allowing hosts to showcase their listings.
+- **Booking System:**
+  - **Description:** This feature allows users to search for properties, make reservations, manage bookings, and handle booking-related communication. It facilitates the core transaction process of the platform, connecting guests with hosts.
+- **Review System:**
+  - **Description:** This feature enables users to write and read reviews of properties and hosts. It builds trust and transparency within the community, helping users make informed decisions.
+- **Payment Processing:**
+  - **Description:** This feature allows users to securely process payments for bookings. It handles the financial transactions between guests and hosts, ensuring a smooth and reliable booking experience.
+- **Search Functionality:**
+  - **Description**: Enables users to search for properties based on various criteria such as location, date, price range, and keywords. This feature allows users to quickly and efficiently find the properties they are interested in.
